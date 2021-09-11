@@ -3,11 +3,36 @@
     {% for source in source_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-3 source-card">
             <li class="">
-                <a href="{{source.url}}" target="_blank" rel="noopener noreferrer">{{source.name}}</a>
+                <a href="/articles/{{ source.id }}"  rel="noopener noreferrer">{{source.name}}</a>
                 {{source.description}}
             </li>
         </div>
     {% endfor %}
-    
 {% endmacro %}
+
+
+{% macro displayArticlesList(article_list) %}
+
+    {% for article in article_list %}
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-3 source-card">
+            <li class="">
+                {% if article.urlToImage %}
+                <div>
+                    <img src="{{article.urlToImage}}" alt="" srcset="" class="img-responsive thumbnail">
+                </div>
+                {% endif %}
+                
+                <p>{{article.author}}</p>
+                <p>{{article.title}}</p>
+                <p>{{article.description}}</p>
+                <a class="thumbnail" href="{{article.url}}" target="_blank" rel="noopener noreferrer">Full Story</a>
+                <p>{{article.publishedAt}}</p> 
+            </li>
+        </div>
+    {% endfor %}
+    
+
+{% endmacro %}
+
+
 
