@@ -94,3 +94,22 @@ def process_articles(articles_list):
         articles_results.append(article_object)
 
     return articles_results
+
+
+def get_articles_from_source(source, pageSize):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}&pageSize={}'.format(source,api_key, pageSize)
+    # get_articles_url = base_url_articles.format(source_id, api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        # load the data into a json object
+        get_articles_response = json.loads(get_articles_data)
+
+        articles_results = None
+
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_articles(articles_results_list)
+    return articles_results  # return the results
