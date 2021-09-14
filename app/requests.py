@@ -113,3 +113,23 @@ def get_articles_from_source(source, pageSize):
             articles_results_list = get_articles_response['articles']
             articles_results = process_articles(articles_results_list)
     return articles_results  # return the results
+
+def get_categories(category):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_category_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey={}'.format(category,api_key)
+    # get_articles_url = base_url_articles.format(source_id, api_key)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        # load the data into a json object
+        get_category_response = json.loads(get_category_data)
+
+        category_results = None
+
+        if get_category_response['results']:
+            category_results_list = get_category_response['results']
+            category_results = process_articles(category_results_list)
+    return category_results  # return the results
+
+
