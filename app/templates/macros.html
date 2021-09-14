@@ -1,18 +1,28 @@
 {% macro displaySourceList(source_list) %} {% for source in source_list %}
-<div class="col-xs-12 col-sm-4 col-md-2 col-lg-3 source-card">
+<!-- <div class="col-xs-12 col-sm-4 col-md-2 col-lg-3 source-card">
   <li class="">
     <a href="/articles/{{ source.id }}" rel="noopener noreferrer"
       >{{source.name}}</a
     >
     {{source.description}}
   </li>
+</div> -->
+
+
+<div class="card col-xs-12 col-sm-4 col-md-3 col-lg-4 source-card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{source.name}}</h5>
+    <p class="card-text">{{source.description}}.</p>
+    <a href="/articles/{{ source.id }}" class="btn btn-primary">View News</a>
+  </div>
 </div>
+
 {% endfor %} {% endmacro %} 
 
 {% macro displayArticlesList(article_list) %} {% for
 article in article_list %}
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 mb-2">
           <div
             class="card text-white card-has-bg click-col"
             style="
@@ -26,12 +36,15 @@ article in article_list %}
             />
             <div class="card-img-overlay d-flex flex-column">
               <div class="card-body">
-                <small class="card-meta mb-2"> <a href="{{article.url}}"></a> {{article.title}}</small>
+                <small class="card-meta mb-2"> {{article.title}}</small>
                 <h4 class="card-title mt-0">
-                  <a class="text-white" href="{{article.url}}"
-                    ><p>{{article.description}}</p></a
+                  <a class="text-white" href=""
+                    >{{article.description}}</a
                   >
                 </h4>
+                <div class="center">
+                  <a href="{{article.url}}" type="button" class="btn btn-outline-primary"> Read Full Story</a>
+                </div>
                 <small><i class="fa fa-clock"></i>{{article.publishedAt}}</small>
               </div>
               <div class="card-footer">
@@ -43,8 +56,8 @@ article in article_list %}
                     style="max-width: 50px"
                   />
                   <div class="media-body">
-                    <h6 class="my-0 text-white d-block">{{article.author}}</h6>
-                    <small>Author</small>
+                    <h6 class="my-0 text-white d-block">Author</h6>
+                    <small>{{article.author}}</small>
                   </div>
                 </div>
               </div>

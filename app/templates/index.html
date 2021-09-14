@@ -7,7 +7,6 @@
 {% endblock %}
 <!-- Content block -->
 {% block content %}
-
 <div
   id="carouselExampleCaptions"
   class="carousel slide w-75 mx-auto"
@@ -104,13 +103,11 @@
   </button>
 </div>
 
-<div class="container">
-  <!-- Popular movie -->
-  <div class="row">
-    <h3>News Sources</h3>
-    <ul>
+<div class="container w-75 mx-auto mt-3" id="sources">
+  <!-- News Sources -->
+  <div class="row text-center">
+    <h3>Your Reliable News Sources</h3>
       {{ macro.displaySourceList(sources)}}
-    </ul>
   </div>
 </div>
 
