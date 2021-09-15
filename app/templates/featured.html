@@ -10,8 +10,9 @@
 {% endblock %}
 <!-- Content block -->
 {% block content %}
-
-    <h3>Latest News</h3>
+    <div class="text-center" >
+      <h3>Latest News in {{categoryName | upper}}</h3> 
+    </div>
     <section class="wrapper">
         <div class="container">
          <div class="row">{{ macro.displayArticlesList(articles)}}</div>

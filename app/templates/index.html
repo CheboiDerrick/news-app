@@ -9,7 +9,7 @@
 {% block content %}
 <div
   id="carouselExampleCaptions"
-  class="carousel slide w-75 mx-auto mt-2"
+  class="carousel slide w-75 mx-auto my-2"
   data-bs-ride="carousel"
 >
   <div class="carousel-indicators">
@@ -47,39 +47,39 @@
     ></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item overlay active">
       <img src="{{reuters[0].urlToImage}}" class="d-block img-responsive img-thumbnail w-100 " alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5><a href="{{reuters[0].url}}">{{reuters[0].title}} </a> </h5>
-        <p> {{reuters[0].description}} </p>
+        <h5><a id="cara5" href="{{reuters[0].url}}">{{reuters[0].title | truncate(70)}} </a> </h5>
+        <p class="mt-2"> {{reuters[0].description}} </p>
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{{wallstreet[0].urlToImage}}" class="d-block image-responsive w-100" alt="..." />
+    </div> 
+    <div class="carousel-item overlay">
+      <img src="{{wallstreet[0].urlToImage}}" class="d-block image-responsive img-thumbnail w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5><a href="{{wallstreet[0].url}}">{{wallstreet[0].title}} </a> </h5>
-        <p>{{wallstreet[0].description}}</p>
+        <h5><a id="cara4" href="{{wallstreet[0].url}}">{{wallstreet[0].title | truncate(70)}} </a> </h5>
+        <p class="mt-2">{{wallstreet[0].description}}</p>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="{{espn[0].urlToImage}}" class="d-block image-responsive w-100" alt="..." />
+    <div class="carousel-item overlay">
+      <img src="{{espn[0].urlToImage}}" class="d-block image-responsive img-thumbnail w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h3><a href="{{espn[0].url}}">{{espn[0].title}} </a> </h3>
-        <p>{{espn[0].description}}</p>
+        <h5><a id="cara1" href="{{espn[0].url}}">{{espn[0].title | truncate(70)}} </a> </h5>
+        <p class="mt-2">{{espn[0].description}}</p>
       </div>
     </div>
-    <div class="carousel-item">
-        <img src="{{washington[0].urlToImage}}" class="d-block image-responsive w-100" alt="..." />
+    <div class="carousel-item overlay">
+        <img src="{{washington[0].urlToImage}}" class="d-block image-responsive img-thumbnail w-100" alt="..." />
         <div class="carousel-caption d-none d-md-block">
-          <h5><a href="{{washington[0].url}}">{{washington[0].title}} </a> </h5>
-          <p> {{washington[0].description}} </p>
+          <h5><a id="cara2" href="{{washington[0].url}}">{{washington[0].title | truncate(70)}} </a> </h5>
+          <p class="mt-2"> {{washington[0].description}} </p>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="{{techradar[0].urlToImage}}" class="d-block image-responsive w-100" alt="..." />
+      <div class="carousel-item overlay">
+        <img src="{{techradar[0].urlToImage}}" class="d-block image-responsive img-thumbnail w-100" alt="..." />
         <div class="carousel-caption d-none d-md-block">
-          <h5><a href="{{techradar[0].url}}">{{techradar[0].title}} </a> </h5>
-          <p> {{techradar[0].description}} </p>
+          <h5><a id="cara3" href="{{techradar[0].url}}">{{techradar[0].title | truncate(70)}} </a> </h5>
+          <p class="mt-2"> {{techradar[0].description}} </p>
         </div>
       </div>
   </div>
@@ -105,8 +105,11 @@
 
 <div class="container w-75 mx-auto mt-3" id="sources">
   <!-- News Sources -->
-  <div class="row text-center">
-    <h3>Your Reliable News Sources</h3>
+  <div class="row mx-auto text-center">
+    <div class="heading my-2">
+      <h3>Your Reliable News Sources</h3>
+    </div>
+    
       {{ macro.displaySourceList(sources)}}
   </div>
 </div>

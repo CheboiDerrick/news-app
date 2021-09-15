@@ -1,22 +1,94 @@
-.navbar{
-    box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+*{
+    font-family: 'Raleway', sans-serif;
 }
 
-.carousel-item{
-    box-shadow: 4px -2px 15px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 4px -2px 15px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px -2px 15px 0px rgba(0,0,0,0.75);
-    max-height: 500px;
+.navbar {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  background-color: #496374;
 }
 
-.source-card .card-body{
-    border: none;
-    box-shadow: 4px 5px 15px 0px rgba(238,145,30,0.75);
-    -webkit-box-shadow: 4px 5px 15px 0px rgba(238,145,30,0.75);
-    -moz-box-shadow: 4px 5px 15px 0px rgba(238,145,30,0.75);
+.nav-item a {
+  color: white;
+  font-size: 1rem;
 }
 
-.btn{
-    border-color: orange;
+.nav-item a:hover {
+  color: orange;
+}
+
+.navbar-brand {
+  color: orange;
+  font-size: 2rem;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: #496374;
+}
+
+#cara1,
+#cara2,
+#cara3,
+#cara4,
+#cara5 {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+#cara1:hover,
+#cara2:hover,
+#cara3:hover,
+#cara4:hover,
+#cara5:hover{
+    color: orange;
+}
+
+.d-none p{
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.carousel-item {
+  max-height: 500px;
+}
+
+.overlay img {
+  box-shadow: 4px -2px 15px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px -2px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px -2px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+.source-card {
+  border: none;
+}
+
+.source-card .card-body {
+  border: none;
+  box-shadow: 4px 5px 15px 0px rgba(211, 228, 235, 0.75);
+  -webkit-box-shadow: 4px 5px 15px 0px rgba(211, 228, 235, 0.75);
+  -moz-box-shadow: 4px 5px 15px 0px rgba(211, 228, 235, 0.75);
+}
+
+.btn {
+  border-color: orange;
+  color: orange;
+}
+
+.btn:hover {
+  background-color: #496374;
+  color: white;
+}
+
+.heading{
+    background-color: #496374;
     color: white;
+    padding: 20px;
 }

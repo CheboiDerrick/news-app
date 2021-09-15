@@ -3,7 +3,7 @@ from . import main
 from ..requests import get_sources, get_articles, get_articles_from_source,get_categories
 
 # Views
-@main.route("/")
+@main.route('/')
 def index():
     """
     View root page function that returns index page and its data
@@ -19,14 +19,6 @@ def index():
     espn = get_articles_from_source("espn", "1")
 
     title = "Home - Welcome Quick News"
-
-    sports="sports"
-    health="health"
-    business="business"
-    entertainment="entertainment"
-    technology="technology"
-    science="science"
-
 
     return render_template(
         "index.html",
@@ -44,12 +36,14 @@ def index():
 def articles(id):
     articles = get_articles(id)
     title = f"{id}"
+    source=id
 
-    return render_template("articles.html", title=title, articles=articles)
+    return render_template("articles.html", title=title, articles=articles,source=source)
 
 @main.route("/featured/<category>")
 def category(category):
     articles=get_categories(category)
     title=f"Latest {category} News"
+    categoryName=category
 
-    return render_template("featured.html", title=title, articles=articles)
+    return render_template("featured.html", title=title, articles=articles, categoryName=categoryName)
