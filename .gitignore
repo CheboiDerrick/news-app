@@ -1,2 +1,4 @@
 start.sh
 *.pyc
+articles.css.map
+articles.scss

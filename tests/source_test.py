@@ -11,7 +11,7 @@ class SourceTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_source = Source(1234,'Python Must Be Crazy','A thrilling new Python Series','https://image.tmdb.org/t/p/w500/khsjha27hbs',8.5,129993)
+        self.new_source = Source("cnn","CNN NEWS","For daily news",'https://cnn.com')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Source))
@@ -20,13 +20,10 @@ class SourceTest(unittest.TestCase):
         '''
         test_init test case to test if the object is initialized properly
         '''
-        self.assertEqual(self.new_source.id,1234)
-        self.assertEqual(self.new_source.tittle,"Python Must Be Crazy")
-        self.assertEqual(self.new_source.overview,"A thrilling new Python Series")
-        self.assertEqual(self.new_source.poster,'https://image.tmdb.org/t/p/w500/khsjha27hbs')
-        self.assertEqual(self.new_source.vote_average,8.5)
-        self.assertEqual(self.new_source.vote_count,129993)
-
-
+        self.assertEqual(self.new_source.id,"cnn")
+        self.assertEqual(self.new_source.name,"CNN NEWS")
+        self.assertEqual(self.new_source.description,"For daily news")
+        self.assertEqual(self.new_source.url,'https://cnn.com')
+       
 if __name__ == '__main__':
     unittest.main()
