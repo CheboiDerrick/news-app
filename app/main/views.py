@@ -20,6 +20,14 @@ def index():
 
     title = "Home - Welcome Quick News"
 
+    sports="sports"
+    health="health"
+    business="business"
+    entertainment="entertainment"
+    technology="technology"
+    science="science"
+
+
     return render_template(
         "index.html",
         title=title,
@@ -39,7 +47,7 @@ def articles(id):
 
     return render_template("articles.html", title=title, articles=articles)
 
-@main.route("/featuted/<category>")
+@main.route("/featured/<category>")
 def category(category):
     articles=get_categories(category)
     title=f"Latest {category} News"

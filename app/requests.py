@@ -118,7 +118,7 @@ def get_categories(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_category_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey={}'.format(category,api_key)
+    get_category_url = 'https://newsapi.org/v2/top-headlines?category={}&language=en&apiKey={}'.format(category,api_key)
     # get_articles_url = base_url_articles.format(source_id, api_key)
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
@@ -127,9 +127,8 @@ def get_categories(category):
 
         category_results = None
 
-        if get_category_response['results']:
-            category_results_list = get_category_response['results']
+        if get_category_response['articles']:
+            category_results_list = get_category_response['articles']
             category_results = process_articles(category_results_list)
     return category_results  # return the results
-
 

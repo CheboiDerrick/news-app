@@ -1,9 +1,9 @@
 {% macro displaySourceList(source_list) %} {% for source in source_list %}
-<div class="card col-xs-12 col-sm-4 col-md-3 col-lg-4 source-card" style="width: 18rem;">
+<div class="card col-xs-12 col-sm-4 col-md-3 col-lg-4 source-card mb-2 me-2" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{source.name}}</h5>
-    <p class="card-text">{{source.description}}.</p>
-    <a href="/articles/{{ source.id }}" class="btn btn-primary">View News</a>
+    <p class="card-text">{{source.description | truncate(100)}}.</p>
+    <a href="/articles/{{ source.id }}" class="btn btn-outline-primary">Read Articles</a>
   </div>
 </div>
 
@@ -26,16 +26,16 @@ article in article_list %}
             />
             <div class="card-img-overlay d-flex flex-column">
               <div class="card-body">
-                <small class="card-meta mb-2"> {{article.description | truncate (100)}} </small>
+                <small class="card-meta mb-2"> {{article.description | truncate(100)}} </small>
                 <h4 class="card-title mt-0 mb-2">
                   <a class="text-white" href=""
-                    >{{article.title}}</a
+                    >{{article.title | truncate (80)}}</a
                   >
                 </h4>
                 <div class="center text-center">
                   <a href="{{article.url}}" type="button" class="btn btn-outline-primary mt-3"> Read Full Story</a>
                 </div>
-                <small><i class="fa fa-clock"></i>{{article.publishedAt | truncate (10)}}</small>
+                <small><i class="fa fa-clock"></i>{{article.publishedAt | truncate (13)}}</small>
               </div>
               <div class="card-footer">
                 <div class="media">

@@ -9,7 +9,7 @@
 {% block content %}
 <div
   id="carouselExampleCaptions"
-  class="carousel slide w-75 mx-auto"
+  class="carousel slide w-75 mx-auto mt-2"
   data-bs-ride="carousel"
 >
   <div class="carousel-indicators">
@@ -48,7 +48,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{reuters[0].urlToImage}}" class="d-block image-responsive w-100 " alt="..." />
+      <img src="{{reuters[0].urlToImage}}" class="d-block img-responsive img-thumbnail w-100 " alt="..." />
       <div class="carousel-caption d-none d-md-block">
         <h5><a href="{{reuters[0].url}}">{{reuters[0].title}} </a> </h5>
         <p> {{reuters[0].description}} </p>
@@ -57,7 +57,7 @@
     <div class="carousel-item">
       <img src="{{wallstreet[0].urlToImage}}" class="d-block image-responsive w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h3><a href="{{wallstreet[0].url}}">{{wallstreet[0].title}} </a> </h3>
+        <h5><a href="{{wallstreet[0].url}}">{{wallstreet[0].title}} </a> </h5>
         <p>{{wallstreet[0].description}}</p>
       </div>
     </div>
